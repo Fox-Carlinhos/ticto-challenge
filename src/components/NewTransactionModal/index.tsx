@@ -11,19 +11,12 @@ import styles from "./styles.module.scss";
 import Image from "next/image";
 import { useTransactions } from "@/hooks/useTransactions";
 import { z } from "zod";
-import { currencyFormat } from "@/utils";
+import { currencyFormat, personalDataSchema, type PersonalDataForm } from "@/utils";
 
 export const NewTransactionModal: React.FC = ({}) => {
-  const { isToggleNewTransactionModal, createTransaction, handleOpenNewTransactionModal } = useTransactions();
+  const { isToggleNewTransactionModal, createTransaction, handleToggleNewTransactionModal } = useTransactions();
 
   const [type, setType] = useState<"withdraw" | "deposit">("deposit");
-  const personalDataSchema = z.object({
-    title: z.string().nonempty("Nome do registro é obrigatório."),
-    amount: z.number().min(1, "O valor do registro deve ser maior que 0."),
-    category: z.string().nonempty("A categoria é obrigatória."),
-  });
-
-  type PersonalDataForm = z.infer<typeof personalDataSchema>;
 
   const {
     control,
@@ -47,11 +40,12 @@ export const NewTransactionModal: React.FC = ({}) => {
 
     reset();
     setType("deposit");
-    handleOpenNewTransactionModal();
+    handleToggleNewTransactionModal();
   }
+
   return (
-    <Modal isOpen={isToggleNewTransactionModal} onRequestClose={handleOpenNewTransactionModal} overlayClassName="react-modal-overlay" className="react-modal-content" ariaHideApp={false}>
-      <button type="button" onClick={handleOpenNewTransactionModal} className="react-modal-close">
+    <Modal isOpen={isToggleNewTransactionModal} onRequestClose={handleToggleNewTransactionModal} overlayClassName="react-modal-overlay" className="react-modal-content" ariaHideApp={false}>
+      <button type="button" onClick={handleToggleNewTransactionModal} className="react-modal-close">
         <Image src={close} alt="Fechar modal" />
       </button>
 

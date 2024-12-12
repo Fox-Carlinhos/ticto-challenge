@@ -15,7 +15,7 @@ interface TransactionsContextData {
   transactions: ITransaction[];
   createTransaction: (transaction: TransactionInput) => Promise<void>;
   trashTransaction: (id: number) => Promise<void>;
-  handleOpenNewTransactionModal: () => void;
+  handleToggleNewTransactionModal: () => void;
   isToggleNewTransactionModal: boolean;
   handleOpenDeleteTransactionModal: (id?: number) => void;
   handleCloseDeleteTransactionModal: () => void;
@@ -30,7 +30,7 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<ITransaction[]>([]);
   const [isToggleDeleteTransactionModal, setIsToggleDeleteTransactionModal] = useState<boolean>(false);
 
-  function handleOpenNewTransactionModal() {
+  function handleToggleNewTransactionModal() {
     setIsToggleNewTransactionModal(!isToggleNewTransactionModal);
   }
 
@@ -102,7 +102,7 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
         handleOpenDeleteTransactionModal,
         handleCloseDeleteTransactionModal,
         isToggleDeleteTransactionModal,
-        handleOpenNewTransactionModal,
+        handleToggleNewTransactionModal,
         isToggleNewTransactionModal,
       }}
     >
