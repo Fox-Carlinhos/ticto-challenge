@@ -12,6 +12,7 @@
 
 - [Technologies](#technologies)
 - [How to Run](#computer-how-to-run)
+- [See Preview](#computer-how-to-run)
 
 # Technologies
 
@@ -39,4 +40,10 @@ $ npm run dev
 
 <p>
   Go to http://localhost:3000/ to see the result Web.
+</p>
+
+# See Preview
+
+<p>
+https://ticto-challenge.vercel.app/
 </p>
