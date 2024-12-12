@@ -20,7 +20,6 @@ This project was made using the follow technologies:
 - [Typescript](https://www.typescriptlang.org/)
 - [NextJs](https://nextjs.org/)
 - [Saas](https://sass-lang.com/)
-- [Sentry](https://sentry.io/welcome/)
 - [React Hook Form](https://www.react-hook-form.com/)
 - [Zod](https://zod.dev/)
 
