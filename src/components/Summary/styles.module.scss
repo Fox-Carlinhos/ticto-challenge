@@ -1,0 +1,63 @@
+.wrapper {
+  margin-top: -2rem;
+  position: relative;
+
+  :global(.swiper) {
+    position: initial;
+  }
+
+  :global(.swiper-slide) {
+    width: min(100%, 24.125rem);
+  }
+
+  :global(.swiper-pagination) {
+    bottom: -2rem;
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    background: var(--purple);
+  }
+
+  .card {
+    padding: 1.375rem 2.25rem 1.75rem;
+    border-radius: 0.5rem;
+
+    color: var(--text-title);
+    background: var(--shape);
+
+    transition: all 0.7s;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    strong {
+      display: block;
+      margin-top: 2.188rem;
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-size: 2.625rem;
+      line-height: 3.688rem;
+    }
+  }
+
+  .highlight {
+    @extend .card;
+
+    background: var(--green);
+    color: var(--shape);
+  }
+
+  .lowlight {
+    @extend .card;
+
+    background: var(--red);
+    color: var(--shape);
+  }
+}

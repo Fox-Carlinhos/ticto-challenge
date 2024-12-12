@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  justify-content: center;
+
+  padding: 0 1rem 1rem;
+}
+
+.container {
+  width: min(100%, 1200px);
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding: 0 1rem 1.125rem;
+  }
+}

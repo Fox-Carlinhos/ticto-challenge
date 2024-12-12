@@ -17,7 +17,8 @@ interface TransactionsContextData {
   trashTransaction: (id: number) => Promise<void>;
   handleOpenNewTransactionModal: () => void;
   isToggleNewTransactionModal: boolean;
-  handleToggleDeleteTransactionModal: (id?: number) => void;
+  handleOpenDeleteTransactionModal: (id?: number) => void;
+  handleCloseDeleteTransactionModal: () => void;
   isToggleDeleteTransactionModal: boolean;
 }
 
@@ -61,11 +62,15 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     }
   }
 
-  function handleToggleDeleteTransactionModal(id?: number) {
+  function handleOpenDeleteTransactionModal(id?: number) {
     setIsToggleDeleteTransactionModal(!isToggleDeleteTransactionModal);
     if (id !== undefined) {
       setId(id);
     }
+  }
+
+  function handleCloseDeleteTransactionModal() {
+    setIsToggleDeleteTransactionModal(!isToggleDeleteTransactionModal);
   }
 
   useEffect(() => {
@@ -89,7 +94,17 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
 
   return (
     <TransactionsContext.Provider
-      value={{ id, transactions, trashTransaction, createTransaction, handleToggleDeleteTransactionModal, isToggleDeleteTransactionModal, handleOpenNewTransactionModal, isToggleNewTransactionModal }}
+      value={{
+        id,
+        transactions,
+        trashTransaction,
+        createTransaction,
+        handleOpenDeleteTransactionModal,
+        handleCloseDeleteTransactionModal,
+        isToggleDeleteTransactionModal,
+        handleOpenNewTransactionModal,
+        isToggleNewTransactionModal,
+      }}
     >
       {children}
     </TransactionsContext.Provider>
