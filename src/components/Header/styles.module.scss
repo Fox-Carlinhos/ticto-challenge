@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem 1rem 5.75rem;
+
+  background: var(--purple);
+}
+
+.wrapper {
+  width: min(100%, 1200px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1.5rem;
+
+  img {
+    width: 40px;
+    object-fit: cover;
+    object-position: left;
+  }
+
+  button {
+    padding: 1rem 3.25rem;
+    border-radius: .5rem;
+
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.375rem;
+
+    color: var(--shape);
+    background: var(--purple-light);
+
+    transition: filter .2s;
+
+    &:hover {
+      filter: brightness(.9);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper img {
+    width: auto;
+    object-fit: contain;
+  }
+}
