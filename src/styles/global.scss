@@ -1,0 +1,119 @@
+:root {
+  --red: #DB3766;
+  --green: #06D6A2;
+  --purple: #30107D;
+
+  --purple-light: #401A9B;
+
+  --text-title: #4E5555;
+  --text-body: #B9B9B9;
+
+  --input-placeholder: #555555;
+  --input-background: #F7F7F7;
+  --border: #D9D9D9;
+  --outline: #A0A0A0;
+
+  --background: #F1F5F8;
+  --background-modal: #FDFDFD;
+  --shape: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  outline: 0;
+
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  @media (max-width: 1080px) {
+    font-size: 93.75%;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 87.5%;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 77.5%;
+  }
+}
+
+body {
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+textarea,
+button {
+  font-weight: 400;
+  border: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-weight: 600;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+}
+
+[disabeld] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.react-modal-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+
+  background: rgba(0, 0, 0, .5);
+}
+
+.react-modal-content {
+  width: 90%;
+  max-width: 576px;
+  background: var(--background-modal);
+  padding: 4.625rem 3.25rem 3.25rem;
+  position: relative;
+  border-radius: .5rem;
+}
+
+.react-modal-close {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  border: 0;
+  background: transparent;
+
+  transition: filter .2s;
+
+  &:hover {
+    filter: brightness(.8);
+  }
+
+  img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
